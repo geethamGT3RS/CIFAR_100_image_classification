@@ -56,13 +56,15 @@ def image_predictor(test):
   
   if test>0 and test <10000 :
     plt.imshow(test_set[test])
-    plt.title('prediction:{0},index:{1}'.format(prediction[test],test_label[test]))
+    predictions = np.argmax(prediction[test])
+    plt.title('prediction:{0}'.format(predictions))
     plt.show()
     
   else :
     test = np.random.randint(1,10000)
     plt.imshow(test_set[test])
-    plt.title('prediction:{0},index:{1}'.format(prediction[test],test_label[test]))
+    predictions = np.argmax(prediction[test])
+    plt.title('prediction:{0}'.format(prediction))
     plt.show()
 
-image_predictor(7)    
+image_predictor(88)    
