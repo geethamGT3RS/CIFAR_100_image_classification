@@ -50,7 +50,7 @@ score = classify.evaluate(test_set,test_label,verbose=0)
 print('deviation',score[0])
 print('accuracy:',score[1])
 
-prediction = classify.predict_classes(test_set)
+prediction = classify.predict(test_set)
 
 def image_predictor(test):
   
@@ -59,8 +59,10 @@ def image_predictor(test):
     plt.title('prediction:{0},index:{1}'.format(prediction[test],test_label[test]))
     plt.show()
     
-   else :
+  else :
     test = np.random.randint(1,10000)
     plt.imshow(test_set[test])
     plt.title('prediction:{0},index:{1}'.format(prediction[test],test_label[test]))
     plt.show()
+
+image_predictor(7)    
